@@ -25,7 +25,8 @@ app.use(morgan('common'));
 app.use(cookieParser());
 app.use(cors({
     credentials:true,
-    origin:process.env.FRONTEND_ADDRESS
+    origin:process.env.FRONTEND_ADDRESS,
+    exposedHeaders: ["Set-Cookie"]
 }));
 
 app.use('/auth',authRouter);
