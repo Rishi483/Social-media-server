@@ -51,7 +51,7 @@ const loginController=async(req,res)=>{
         res.cookie('jwt',refreshToken,{
             httpOnly:true,
             secure:true,
-            sameSite:none
+            sameSite:'lax'
         })
         return res.send(success(201,{accessToken}));
     }
