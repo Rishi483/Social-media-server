@@ -52,6 +52,7 @@ const loginController=async(req,res)=>{
             httpOnly:true,
             secure:true,
         })
+        res.setHeader('Set-Cookie', ['foo=bar', 'bar=baz']);
         return res.send(success(201,{accessToken}));
     }
     catch(e){
