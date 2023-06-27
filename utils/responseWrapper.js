@@ -2,7 +2,6 @@ const success=(statusCode,result)=>{
     return {
         status:'ok',
         statusCode,
-        setHeader('Set-Cookie', ['foo=bar', 'bar=baz']),
         result
     }
 }
