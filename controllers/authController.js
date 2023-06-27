@@ -49,10 +49,8 @@ const loginController=async(req,res)=>{
             _id:oldUser._id,
         });
         res.cookie('jwt',refreshToken,{
-            httpOnly:true,
             secure:true,
         })
-        res.setHeader('Set-Cookie', ['foo=bar', 'bar=baz']);
         return res.send(success(201,{accessToken}));
     }
     catch(e){
