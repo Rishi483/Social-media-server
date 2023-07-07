@@ -49,7 +49,8 @@ const loginController=async(req,res)=>{
             _id:oldUser._id,
         });
         res.cookie('jwt',refreshToken,{
-            secure:true,
+            httpOnly: true,
+            maxAge: 60 * 60 * 1000
         })
         return res.send(success(201,{accessToken}));
     }
