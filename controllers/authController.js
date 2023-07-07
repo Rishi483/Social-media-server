@@ -92,7 +92,7 @@ const logOutController=async(req,res)=>{
 //internal function
 const generateAccessToken=(data)=>{
     const token=jwt.sign(data,process.env.JWT_SECRET_KEY,{
-        expiresIn:'15m'
+        expiresIn:'1y'
     });
     return token;
 }
